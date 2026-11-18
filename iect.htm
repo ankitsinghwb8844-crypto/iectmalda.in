@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>I.E.C.T | Institute of Electronics and Computer Technology — Malda</title>
+  <meta name="description" content="Institute of Electronics and Computer Technology (I.E.C.T) in Malda — Printer & computer service, new laptops (HP, Lenovo, Dell, Asus), and certified refurbished laptops from Electronic Bazar with easy EMI options." />
+  <style>
+    :root {
+      --primary: #1d4ed8;
+      --primary-dark: #1e40af;
+      --accent: #0f766e;
+      --bg-light: #f8fafc;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: var(--text-main);
+      line-height: 1.6;
+      background-color: #ffffff;
+    }
+
+    /* Navbar */
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    nav a {
+      margin-left: 1.25rem;
+      text-decoration: none;
+      color: var(--text-main);
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 5rem 1.5rem 4rem;
+      background: linear-gradient(180deg, #eff6ff 0%, #ffffff 100%);
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero p {
+      font-size: 1.125rem;
+      color: var(--text-muted);
+      max-width: 640px;
+      margin: 0 auto 2rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background-color: var(--primary);
+      color: #ffffff;
+      padding: 0.85rem 1.75rem;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.2s, transform 0.1s;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      display: inline-block;
+      background-color: #ffffff;
+      color: var(--primary);
+      border: 1px solid var(--primary);
+      padding: 0.85rem 1.75rem;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: background-color 0.2s;
+    }
+
+    .btn-secondary:hover {
+      background-color: #eff6ff;
+    }
+
+    /* Sections */
+    section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3.75rem 1.5rem;
+    }
+
+    .section-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      text-align: center;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--text-muted);
+      max-width: 700px;
+      margin: 0 auto 2.5rem;
+    }
+
+    /* Cards Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--bg-light);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.65rem;
+      color: var(--primary-dark);
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.96rem;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #dbeafe;
+      color: var(--primary-dark);
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      margin-bottom: 0.75rem;
+      width: fit-content;
+    }
+
+    .tag-green {
+      background: #ccfbf1;
+      color: var(--accent);
+    }
+
+    .brand-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .badge {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      padding: 0.35rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    /* EMI Highlight Banner */
+    .emi-banner {
+      background: linear-gradient(90deg, #1e3a8a, #1d4ed8);
+      color: #ffffff;
+      border-radius: 12px;
+      padding: 1.75rem 2rem;
+      margin-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .emi-banner h4 {
+      font-size: 1.2rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .emi-banner p {
+      color: #dbeafe;
+      font-size: 0.95rem;
+    }
+
+    /* Contact & Location Split */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .contact-wrapper, .location-box {
+      background: var(--bg-light);
+      padding: 2rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+
+    .form-group {
+      margin-bottom: 1.15rem;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+      font-size: 0.9rem;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 0.98rem;
+      font-family: inherit;
+      background: #ffffff;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.15);
+    }
+
+    .info-item {
+      margin-bottom: 1.25rem;
+    }
+
+    .info-item strong {
+      display: block;
+      color: var(--text-main);
+      margin-bottom: 0.2rem;
+    }
+
+    .info-item span, .info-item a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .map-frame {
+      width: 100%;
+      height: 230px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+
+    /* Floating WhatsApp Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background-color: #25d366;
+      color: #ffffff;
+      padding: 0.75rem 1.25rem;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      z-index: 200;
+      transition: transform 0.2s;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.04);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav-container">
+      <a href="#" class="logo">I.E.C.T — Institute of Electronics & Computer Technology</a>
+      <nav>
+        <a href="#laptops">Laptops</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Welcome to I.E.C.T</h1>
+      <p>Printer & computer Service, brand-new laptops, and certified refurbished laptops from Electronic Bazar.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Send an Enquiry</a>
+      </div>
+      
+    </section>
+    <!-- Laptops & Hardware Section -->
+    <section id="laptops">
+      <h2 class="section-title">Laptops & Hardware Solutions</h2>
+      <p class="section-subtitle">Whether you need a brand-new workstation or a budget-friendly refurbished laptop, we help you choose the right configuration.</p>
+
+      <div class="grid">
+        <div class="card">
+          <div>
+            <span class="tag">Brand New</span>
+            <h3>Top Laptop Brands</h3>
+            <p>Authorized multi-brand selection of brand-new laptops, desktops, and accessories backed by official manufacturer warranty.</p>
+          </div>
+          <div class="brand-badges">
+            <span class="badge">HP</span>
+            <span class="badge">Lenovo</span>
+            <span class="badge">Dell</span>
+            <span class="badge">Asus</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div>
+            <span class="tag tag-green">Best Value</span>
+            <h3>Electronic Bazar Refurbished Laptops</h3>
+            <p>Certified, multi-point tested business-grade refurbished laptops from Electronic Bazar—delivering high-speed SSD performance, warranty assurance, and major savings.</p>
+          </div>
+          <div class="brand-badges">
+            <span class="badge">Quality Tested</span>
+            <span class="badge">Warranty Included</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="emi-banner">
+        <div>
+          <h4>Easy EMI & Student Discounts Available</h4>
+          <p>Flexible monthly installment options on select new and refurbished laptops. Ask our team for current offers.</p>
+        </div>
+        <a href="#contact" class="btn-secondary" style="border: none;">Check Eligibility</a>
+      </div>
+    </section>
+
+    <!-- Contact & Map Section -->
+    <section id="contact">
+      <h2 class="section-title">Get in Touch</h2>
+      <p class="section-subtitle">Visit our center in Malda or send us a message regarding course admissions or laptop availability.</p>
+
+      <div class="contact-grid">
+        <div class="contact-wrapper">
+          <form name="iect-enquiry" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="iect-enquiry" />
+
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" name="name" placeholder="Enter your name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number *</label>
+              <input type="tel" id="phone" name="phone" placeholder="e.g., +91 98765 43210" required />
+            </div>
+
+            <div class="form-group">
+              <label for="interest">Enquiry For *</label>
+              <select id="interest" name="interest" required>
+                <option value="New Laptops">Brand-New Laptops (HP/Lenovo/Dell/Asus)</option>
+                <option value="Refurbished Laptops">Electronic Bazar Refurbished Laptops</option>
+                <option value="Other">General Enquiry</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" rows="3" placeholder="Write your query here..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary" style="width: 100%;">Submit Enquiry</button>
+          </form>
+        </div>
+
+        <div class="location-box">
+          <h3 style="margin-bottom: 1rem; color: var(--primary-dark);">Center Details</h3>
+          
+          <div class="info-item">
+            <strong>Address</strong>
+            <span>Institute of Electronics & Computer Technology (I.E.C.T), 8/9B Rabindra Avenue, English Bazar, Opposite Pabna Sweets, Malda, West Bengal 732101</span>
+          </div>
+
+          <div class="info-item">
+            <strong>Phone & WhatsApp</strong>
+            <a href="tel:+91 9434095159">+91 9434095159</a>
+          </div>
+
+          <div class="info-item">
+            <strong>Working Hours</strong>
+            <span>Monday – Saturday: 10:00 AM – 9:00 PM</span>
+          </div>
+
+          <!-- Generic Malda map embed; replace src with exact Google Maps embed link if desired -->
+          <iframe 
+           class="map-frame"
+           title="I.E.C.T Location Map"
+           loading="lazy" 
+           referrerpolicy="no-referrer-when-downgrade"
+           src="https://maps.google.com/maps?q=8/9B%20Rabindra%20Avenue,%20English%20Bazar,%20Malda,%20West%20Bengal%20732101&t=&z=16&ie=UTF8&iwloc=&output=embed">
+          </iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <a href="https://wa.me/+91 9434095159?text=Hello%20I.E.C.T%2C%20I%20would%20like%20to%20enquire%20about%20courses%20or%20laptops." 
+     class="whatsapp-float" 
+     target="_blank" 
+     rel="noopener noreferrer">
+    Chat on WhatsApp
+  </a>
+
+  <footer>
+    <p>© 2027 Institute of Electronics and Computer Technology (I.E.C.T). All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
